@@ -14,34 +14,42 @@ class ViewController: UIViewController {
     @IBOutlet var greenTrafficLight: UIView!
     @IBOutlet var startNextButton: UIButton!
     
+    let switchedOnLight: CGFloat = 1
+    let switchedOffLight = 0.3
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        redTrafficLight.layer.cornerRadius = 75
-        redTrafficLight.alpha = 0.3
         
-        yellowTrafficLight.layer.cornerRadius = 75
-        yellowTrafficLight.alpha = 0.3
+        let trafficLightRadius: CGFloat = 75
         
-        greenTrafficLight.layer.cornerRadius = 75
-        greenTrafficLight.alpha = 0.3
+        redTrafficLight.layer.cornerRadius = trafficLightRadius
+        redTrafficLight.alpha = switchedOffLight
+        
+        yellowTrafficLight.layer.cornerRadius = trafficLightRadius
+        yellowTrafficLight.alpha = switchedOffLight
+        
+        greenTrafficLight.layer.cornerRadius = trafficLightRadius
+        greenTrafficLight.alpha = switchedOffLight
         
         startNextButton.layer.cornerRadius = 27.5
     }
     
-    
     @IBAction func startButtonDidTapped() {
-        startNextButton.setTitle("NEXT", for: .normal)
-        if redTrafficLight.alpha == 1 {
-            yellowTrafficLight.alpha = 1
-            redTrafficLight.alpha = 0.3
-        } else if yellowTrafficLight.alpha == 1 {
-            greenTrafficLight.alpha = 1
-            yellowTrafficLight.alpha = 0.3
-        } else if greenTrafficLight.alpha == 1{
-            redTrafficLight.alpha = 1
-            greenTrafficLight.alpha = 0.3
+        if startNextButton.currentTitle == "start".uppercased() {
+            startNextButton.setTitle("NEXT", for: .normal)
+        }
+    
+        if redTrafficLight.alpha == switchedOnLight {
+            yellowTrafficLight.alpha = switchedOnLight
+            redTrafficLight.alpha = switchedOffLight
+        } else if yellowTrafficLight.alpha == switchedOnLight {
+            greenTrafficLight.alpha = switchedOnLight
+            yellowTrafficLight.alpha = switchedOffLight
+        } else if greenTrafficLight.alpha == switchedOnLight {
+            redTrafficLight.alpha = switchedOnLight
+            greenTrafficLight.alpha = switchedOffLight
         } else {
-            redTrafficLight.alpha = 1
+            redTrafficLight.alpha = switchedOnLight
         }
     }
 }
