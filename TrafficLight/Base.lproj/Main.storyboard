@@ -66,10 +66,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="greenTrafficLight" destination="WqK-Iz-ll2" id="Ehn-df-9RH"/>
-                        <outlet property="redTrafficLight" destination="EyZ-BL-DkD" id="wcA-Km-0C9"/>
+                        <outlet property="greenLightView" destination="WqK-Iz-ll2" id="Ehn-df-9RH"/>
+                        <outlet property="redLightView" destination="EyZ-BL-DkD" id="wcA-Km-0C9"/>
                         <outlet property="startNextButton" destination="8NH-Tj-gMH" id="94M-ZX-hj1"/>
-                        <outlet property="yellowTrafficLight" destination="j0e-Hl-S24" id="mHj-hu-Bft"/>
+                        <outlet property="yellowLightView" destination="j0e-Hl-S24" id="mHj-hu-Bft"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
