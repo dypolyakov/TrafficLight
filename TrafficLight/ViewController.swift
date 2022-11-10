@@ -14,21 +14,19 @@ class ViewController: UIViewController {
     @IBOutlet var greenTrafficLight: UIView!
     @IBOutlet var startNextButton: UIButton!
     
-    let switchedOnLight: CGFloat = 1
-    let switchedOffLight = 0.3
+    private let switchedOnLight: CGFloat = 1
+    private let switchedOffLight = 0.3
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let trafficLightRadius: CGFloat = 75
-        
-        redTrafficLight.layer.cornerRadius = trafficLightRadius
+        redTrafficLight.layer.cornerRadius = redTrafficLight.frame.width / 2
         redTrafficLight.alpha = switchedOffLight
         
-        yellowTrafficLight.layer.cornerRadius = trafficLightRadius
+        yellowTrafficLight.layer.cornerRadius = yellowTrafficLight.frame.width / 2
         yellowTrafficLight.alpha = switchedOffLight
         
-        greenTrafficLight.layer.cornerRadius = trafficLightRadius
+        greenTrafficLight.layer.cornerRadius = greenTrafficLight.frame.width / 2
         greenTrafficLight.alpha = switchedOffLight
         
         startNextButton.layer.cornerRadius = 27.5
