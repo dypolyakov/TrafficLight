@@ -20,21 +20,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         redLightView.alpha = lightIsOff
         yellowLightView.alpha = lightIsOff
         greenLightView.alpha = lightIsOff
-        
+    }
+    
+    override func viewWillLayoutSubviews() {
         redLightView.layer.cornerRadius = redLightView.frame.width / 2
-        redLightView.alpha = lightIsOff
-        
         yellowLightView.layer.cornerRadius = yellowLightView.frame.width / 2
-        yellowLightView.alpha = lightIsOff
-        
         greenLightView.layer.cornerRadius = greenLightView.frame.width / 2
-        greenLightView.alpha = lightIsOff
-        
         startNextButton.layer.cornerRadius = startNextButton.frame.height / 2
+        
     }
     
     @IBAction func startButtonDidTapped() {
@@ -56,19 +52,6 @@ class ViewController: UIViewController {
             greenLightView.alpha = lightIsOn
             currentLight = .red
         }
-        
-//        if redLightView.alpha == switchedOnLight {
-//            yellowLightView.alpha = switchedOnLight
-//            redLightView.alpha = switchedOffLight
-//        } else if yellowLightView.alpha == switchedOnLight {
-//            greenLightView.alpha = switchedOnLight
-//            yellowLightView.alpha = switchedOffLight
-//        } else if greenLightView.alpha == switchedOnLight {
-//            redLightView.alpha = switchedOnLight
-//            greenLightView.alpha = switchedOffLight
-//        } else {
-//            redLightView.alpha = switchedOnLight
-//        }
     }
 }
 
